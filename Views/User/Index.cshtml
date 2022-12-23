@@ -1,0 +1,127 @@
+﻿@model DotNetCoreApp.ViewModels.UserViewModel
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dot Net Core</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://kit.fontawesome.com/f2708d51a6.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+
+    <style>
+        form#register-user-form {
+            background-image: linear-gradient(135deg, #71b7e6, #9b59b6);
+            padding: 15px 10px;
+        }
+
+        .form-login-section {
+            height: 80vh;
+            align-items: center;
+            display: flex;
+        }
+
+        h1 {
+            color: #000;
+            font-size: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 10px 0;
+        }
+
+        form label {
+            display: inline-block;
+            margin-bottom: .5rem;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        form input.form-control {
+            border-radius: 4px;
+            background: #f5f5f5;
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            padding: 9px 10px;
+            margin-bottom: 15px;
+        }
+
+        form select.form-control {
+            border-radius: 4px;
+            background: #f5f5f5;
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            padding: 9px 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="form-login-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <form id="register-user-form" class="form">
+                    <h1 style="text-align:center">Register </h1>
+                    <div class="col form-group">
+                        <label>First Name</label>
+                        <input class="form-control form-control-sm" id="txt-fName" name="FirstName" placeholder="Enter First Name" required />
+                        <span id="txt-fName-message"></span>
+
+                        <label>Last Name</label>
+                        <input class="form-control form-control-sm" id="txt-lName" name="LastName" placeholder="Enter Last Name" required />
+                        <span id="txt-lName-message"></span>
+
+                        <label>Email</label>
+                        <input type="email" class="form-control form-control-sm" id="email" name="Email" placeholder="Enter Email" required />  @*onkeypress="checkEmail()"*@
+                        <span id="result"></span>
+
+
+                        <label>Gender</label>
+                        <select class="form-control " id="list-gender" name="Gender">
+                        </select>
+
+                        <label>Password</label>
+                            <input type="password" class="form-control " id="txt-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                            name="Password" placeholder="Enter Password" required />
+                        <span id="txt-password-message"></span>
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" class="btn-primary btn-lg" name="Resister" value="Submit" />
+                        <a style="text-align:center" class="nav-link px-lg-3 py-3 py-lg-4 d-inline" href="/">Back to Login</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+    
+    <script src="~/js/Scripts/User.js"></script>
+
+</body>
+</html>
+
+

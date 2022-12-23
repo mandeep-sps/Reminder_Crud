@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+   <div class="text-end">
+    @if (ViewBag.Id!=null)
+    {
+        <h1 class="">Welcome User @ViewBag.Email</h1>
+    }
+    
+   </div>
+<button class="btn btm-sm btn-primary" onclick="openEventForm()"> <i class="fas fa-plus-circle"></i> Add Event</button>
+    <hr />
+
+    <table class="table table-bordered table-hover table-striped table-striped" id="tbl">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Time and Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!--Add Event Modal -->
+<div class="modal fade" id="event-form-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="example-model-id"><span id="lbl-event"></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="event-form-id">
+                    <div class="modal-body">
+                        <input type="hidden" id="txt-id" name="EventId" />
+                        <div class="modal-body">
+                        <input type="hidden" id="txt-userId" name="UserId" />
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <label for="txt-title">Title</label>
+                                    <input class="form-control form-control-sm rounded" id="txt-title" name="Title" placeholder="Enter Titel" />
+                                    <span id="txt-name-message"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="txt-description">Description</label>
+                                    <textarea rows="3" class="form-control form-control-sm rounded" id="txt-description" name="Description"
+                                              placeholder="Enter Description (Max 200 characters allowed)" maxlength="200" onkeyup="countCharacter()"></textarea>
+                                    <span id="txt-description-message"></span>
+                                    <div class="text-right"><small> <span id="description-character-count"></span>/200</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-6 form-group">
+                            <label for="txt-time-date">Time and Date</label>
+                            <input type="datetime-local" class="form-control form-control-sm rounded" id="txt-time-date" name="Time" />
+                            <span id="txt-time-date-message"></span>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-outline-secondary rounded" data-dismiss="modal">Close</button>
+                        <button class="btn btn-sm btn-success">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<div id="sporta-modal-dialog-div"></div>
+
+@section Scripts{
+    <script src="~/js/Scripts/Event.js"></script>
+}
