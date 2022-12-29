@@ -36,10 +36,9 @@ namespace DotNetCoreApp.Controllers
         {
             try 
             {
-                //var message = string.Empty;
                 var IsEmailExist = (_repository.Get<TblUserRegsitration>(x => x.Email == request.Email)) != null;
                 if (IsEmailExist)
-                    return new ResponseService(null,"Email Id already exist!", true);
+                    return new ResponseService(null,"This Email Id already exist!", true);
 
                 var user = new TblUserRegsitration
                     {

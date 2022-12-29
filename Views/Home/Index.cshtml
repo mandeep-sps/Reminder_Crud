@@ -3,15 +3,15 @@
 }
 
 
-   <div class="text-end">
+   <div class="text-lg-end">
     @if (ViewBag.Id!=null)
     {
-        <h1 class="">Welcome User @ViewBag.Email</h1>
+        <h5>Welcome User <span class="text-primary"> @ViewBag.Email</span></h5>
     }
     
    </div>
-<button class="btn btm-sm btn-primary" onclick="openEventForm()"> <i class="fas fa-plus-circle"></i> Add Event</button>
-    <hr />
+   <button class="btn btm-sm btn-primary" onclick="openEventForm()"><i class="fas fa-plus-circle"></i> Add Event</button>
+   <hr />
 
     <table class="table table-bordered table-hover table-striped table-striped" id="tbl">
         <thead>
@@ -32,8 +32,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="example-model-id"><span id="lbl-event"></span></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
                 <form id="event-form-id">
@@ -45,7 +44,7 @@
                                 <div class="col-6 form-group">
                                     <label for="txt-title">Title</label>
                                     <input class="form-control form-control-sm rounded" id="txt-title" name="Title" placeholder="Enter Titel" />
-                                    <span id="txt-name-message"></span>
+                                    <span id="txt-title-message"></span>
                                 </div>
                             </div>
                             <div class="row">
@@ -76,7 +75,7 @@
                 </form>
             </div>
         </div>
-    </div>
+ </div>
 
 
 <div id="sporta-modal-dialog-div"></div>

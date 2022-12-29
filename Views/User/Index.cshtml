@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dot Net Core</title>
+    <title>Register</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -86,10 +86,10 @@
                         <span id="txt-lName-message"></span>
 
                         <label>Email</label>
-                        <input type="email" class="form-control form-control-sm" id="email" name="Email" placeholder="Enter Email" required />  @*onkeypress="checkEmail()"*@
-                        <span id="result"></span>
-
-
+                        <input type="email" class="form-control form-control-sm" id="email" name="Email" placeholder="Enter Email" required />
+                            <div class="alert-danger">
+                                <span id="result"></span>
+                            </div>
                         <label>Gender</label>
                         <select class="form-control " id="list-gender" name="Gender">
                         </select>
@@ -118,7 +118,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-    
     <script src="~/js/Scripts/User.js"></script>
 
 </body>

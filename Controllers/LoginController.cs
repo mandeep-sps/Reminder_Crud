@@ -21,18 +21,25 @@ namespace DotNetCoreApp.Controllers
         [HttpPost]
         public IActionResult ValidateUser(UserLoginModel login)
         {
-            var user = _repository.Get<TblUserRegsitration>(x => x.Email == login.Email && x.Password == login.Password);
-            if (user != null)
+            try
             {
-                HttpContext.Session.SetString("UserId", user.UserId.ToString());
-                HttpContext.Session.SetString("Email", login.Email);
-                return RedirectToAction("Index", "Home");
+                var user = _repository.Get<TblUserRegsitration>(x => x.Email == login.Email && x.Password == login.Password);
+                if (user != null)
+                {
+                    HttpContext.Session.SetString("UserId", user.UserId.ToString());
+                    HttpContext.Session.SetString("Email", login.Email);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ViewBag.error = "Invalid Login";
+                }
+                return View("Index");
             }
-            else
+            catch(Exception ex)
             {
-                ViewBag.error = "InvalidLogin";
+                return null;
             }
-            return View("Index");
         }
 
         [HttpGet]
